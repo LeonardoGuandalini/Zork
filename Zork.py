@@ -51,12 +51,103 @@ def intro():
                 print("The old man said: Thanks! It's dangerous to go alone. Take this. RECEIVED 1 DAGGER")
                 RH = two
                 Status()
+                print ("You arrived the village at 10:56 pm and it was raining. There's a (hotel?) to your left, a store towards you and a tavern by your right.")
+                print ("Where would you like to go?: ")
+                answer4 = input("1. Hotel; 2.Store; 3.Tavern")
+                if answer4 == 1:
+                    print("There was a woman inside. She says: Would you like to rest? 10 coins.")
+                    answer_Hotel1 = raw_input("Would you like to rest? (Recovers 10HP): ")
+                    if answer_Hotel1 == "Yes":
+                        if Coins > 10:
+                            if HP < 100:
+                                print("You rested and recovered 10 HP")
+                                Coins -= 10
+                                HP += 10
+                                Status()
+                            else:
+                                print("You don't need to rest.")
+                        else:
+                            print("Sorry, you need more money!")
+                    else:
+                        print("Ok then.")
+
+                elif answer4 == 2:
+                    print("There was a man inside. He says: Hay mate. Would you like to buy some gear?")
+
+
+
+
+
+                elif answer4 == 3:
+                    print("It was crowded. There was a paper hanging on the wall that said that the beer was 2 coins. Drink one?")
+
+
+
+
         elif answer2 == 2:
-            print("You found a chest with 20 coins in it")
+            print("You found a chest with 20 coins in it and you followed a path to a village.")
             Coins += 20
             Status()
+            print ("You arrived the village at 10:56 pm and it was raining. There's a (hotel?) to your left, a store towards you and a tavern by your right.")
+            print ("Where would you like to go?: ")
+            answer4 = input("1. Hotel; 2.Store; 3.Tavern")
+            if answer4 == 1:
+                print("There was a woman inside. She says: Would you like to rest? 10 coins.")
+                answer_Hotel1 = raw_input("Would you like to rest? (Recovers 10HP): ")
+                if answer_Hotel1 == "Yes":
+                    if Coins > 10:
+                        if HP < 100:
+                            print("You rested and recovered 10 HP")
+                            Coins -= 10
+                            HP += 10
+                            Status()
+                        else:
+                            print("ERROR: FULL HP")
+                    else:
+                        print("Sorry, you need more money!")
+                else:
+                    print("Ok then.")
+
+            elif answer4 == 2:
+                print("There was a man inside. He says: Hay mate. Would you like to buy some gear?")
+
+
+
+
+
+            elif answer4 == 3:
+                print("It was crowded. There was a paper hanging on the wall that said that the beer was 2 coins. Drink one?")
+
         else:
             print("Do something!")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -67,6 +158,5 @@ def intro():
     else:
         print("...")
         intro()
-
 
 intro()
