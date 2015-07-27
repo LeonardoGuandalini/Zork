@@ -1,4 +1,4 @@
-
+HP = 90
 def intro():
     HP = 100
     print("Player, in the sections RH and LH, the numbers 0 - 4 are the amount of damage your weapon does. Nothing = 0; Dagger = 1; Sword = 2; Longsword = 3; Divine sword = 4; Double dagger = 3.")
@@ -42,6 +42,7 @@ def intro():
     #END OF COMMENT
     #Start of new function UseItem
     def UseItem():
+        global HP
         print Inventory
         Choice = raw_input("Which item do you want to use?: ")
         if Choice == "small_potion":
@@ -127,6 +128,8 @@ def intro():
                                 if Coins >= 2:
                                     Inventory["small_potion"] = 1
                                     Status()
+                                    UseItem()
+
                         elif buyChoice == 3:
                             print("wait")
 
@@ -190,10 +193,11 @@ def intro():
                                 Coins -= 2
                                 Status()
                                 UseItem()
+                                print Inventory
 
 
                     elif buyChoice == 3:
-                        print("wait")
+                        print "Gaben"
 
 
 
