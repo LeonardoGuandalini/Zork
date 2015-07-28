@@ -10,3 +10,5 @@ class Players:
 		self.battlehp = battlehp
 Player = Players(10, 10, 2, 0)
 
+CLIQUE NO 'RAW' PARA VER O CÓDIGO CERTO
+
