@@ -86,7 +86,19 @@ class Player(Character):
         self.life = 100
         self.righthand = Dagger
         self.lefthand = Nothing
-        self.inventory = {}
+        self.inventory = {SmallPotion}
+
+class Foe:
+    def get_life(self):
+        return self.life
+    def get_attack(self):
+        return self.attack
+
+
+class DireDog(Foe):
+    def __init__(self):
+        self.life = 10
+        self.attack = 2
 
 
 
@@ -99,3 +111,15 @@ def Status():
 
 print("Welcome to Zork, a text based game.")
 Status()
+
+
+print("You are in a field with a Brown House in your right and a small mailbox near you")
+userChoice = input("1.Go to Brown House; 2.Open mailbox")
+if userChoice == 1:
+    print("A dire dog jumped in front of you.")
+    print("//ENTERING BATTLE MODE\\")
+    atkChoice = input("1.Attack")
+    if atkChoice == 1:
+        while DireDog().life > 0:
+            DireDog().life -= Dagger
+            print DireDog().life
